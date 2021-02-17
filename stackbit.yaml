@@ -1,0 +1,8 @@
+stackbitVersion: ~0.3.0
+ssgName: nextjs
+cmsName: contentful
+import:
+  type: contentful
+  contentFile: export.json
+  spaceIdEnvVar: ykfadgud3ei5
+  accessTokenEnvVar: nhqKOl9MIAgEvVx1c8HULPLcidnGd1UKd5VJwS__whU

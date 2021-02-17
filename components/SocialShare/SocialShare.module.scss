@@ -1,0 +1,50 @@
+@import "../../styles/variables.scss";
+
+.Wrapper {
+  margin-bottom: 5.6rem;
+  text-align: center;
+
+  @include media(">tablet") {
+    margin-bottom: 7.2rem;
+    text-align: left;
+  }
+}
+
+.Container {
+  display: flex;
+  justify-content: center;
+
+  @include media(">tablet") {
+    justify-content: left;
+  }
+}
+
+.Heading {
+  color: $grey-01;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.34rem;
+  line-height: 1.4rem;
+  margin-top: 1rem;
+  text-transform: uppercase;
+}
+
+.SocialLink {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+
+  @include media(">tablet") {
+    margin-right: 3rem;
+    margin-left: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.Icon {
+  height: 5rem;
+  width: 5rem;
+}

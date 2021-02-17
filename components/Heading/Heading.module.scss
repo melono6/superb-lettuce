@@ -1,0 +1,89 @@
+@import "../../styles/variables.scss";
+
+.Heading {
+  text-align: center;
+  margin-bottom: 2.7rem;
+
+  @include media(">tablet") {
+    margin-bottom: 3rem;
+  }
+}
+
+.HeadingTitle {
+  font-family: $font-primary;
+  color: $black;
+  font-size: 4rem;
+  line-height: 4.8rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  &:before,
+  &:after {
+    content: "";
+    border-top: 0.1rem solid;
+    flex: 1 0 2rem;
+  }
+
+  &::before {
+    margin-right: 2rem;
+  }
+
+  &:after {
+    margin-left: 2rem;
+  }
+
+  @include media(">tablet") {
+    font-size: 4.6rem;
+    line-height: 5.5rem;
+  }
+
+  .Heading__Large & {
+    @include media(">tablet") {
+      font-size: 6.4rem;
+      line-height: 7.7rem;
+    }
+  }
+
+  .Heading__LeftAlign & {
+    @include media(">tablet") {
+      &:before,
+      &:after {
+        flex: unset;
+      }
+
+      &::before {
+        width: calc(100% / 12 * 2 - 3rem);
+      }
+
+      &:after {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .Heading__FontBold & {
+    font-weight: 800;
+  }
+}
+
+.Title {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-transform: capitalize;
+}
+
+.Diamond {
+  width: 0.9rem;
+  height: 0.9rem;
+  min-width: 0.9rem;
+  min-height: 0.9rem;
+  display: inline-block;
+  transform: rotate(45deg);
+  transform-origin: center center;
+  background-color: $black;
+}

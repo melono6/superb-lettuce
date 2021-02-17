@@ -1,0 +1,165 @@
+@import "../../styles/variables.scss";
+
+.SearchResults {
+  padding: 0 2.5rem;
+}
+
+.DiamondBreak {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+
+  > div {
+    height: 0.554rem;
+    width: 0.554rem;
+    transform: rotate(-45deg);
+    background-color: $black;
+    margin: 0 0.4rem;
+  }
+}
+
+.ResultsText {
+  text-align: center;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  line-height: 1.4rem;
+  margin-top: 1.5rem;
+  visibility: hidden;
+
+  @include media(">tablet") {
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 2.4rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.ShowResultsText {
+  visibility: visible;
+}
+
+.NoResults {
+  color: $orange-01;
+  background-color: $brand-secondary;
+  padding: 0.8rem 4rem;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.34rem;
+  line-height: 2.4rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 1.5rem;
+
+  @include media(">tablet") {
+    max-width: 64.6rem;
+    margin: 2.2rem auto;
+  }
+}
+
+.SearchContainer {
+  width: 100%;
+  position: relative;
+  margin: 2rem auto 0;
+
+  @include media(">tablet") {
+    max-width: 101.3rem;
+    margin: 0 auto;
+  }
+}
+
+.SearchInput {
+  width: 100%;
+  background: none;
+  border: 0;
+  border-bottom: 0.1rem solid $black;
+  color: $black;
+  font-family: $font-primary;
+  font-size: 3rem;
+  font-weight: bold;
+  letter-spacing: 0.08rem;
+  line-height: 3.6rem;
+  text-align: center;
+  padding-bottom: .5rem;
+
+  &::placeholder {
+    color: $grey-02;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+
+  @include media(">tablet") {
+    border-bottom: 0.2rem solid $black;
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+  }
+}
+
+.SearchSubmit {
+  position: absolute;
+  padding: .9rem 1.2rem;
+  color: $orange-01;
+  right: 0;
+  bottom: 1rem;
+  border: 0.1rem solid $orange-03;
+  background: none;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 900;
+  line-height: 1.4rem;
+  letter-spacing: 0.35rem;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  @include media(">tablet") {
+    padding: 1.5rem 3rem;
+  }
+}
+
+.ResultsCount {
+  display: none;
+  text-align: center;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.34rem;
+  line-height: 1.4rem;
+  margin-top: 3.5rem;
+
+  @include media(">tablet") {
+    display: block;
+  }
+}
+
+.ResultsContainer {
+  margin-top: 2.3rem;
+  max-width: 101.3rem;
+  margin: 0 auto 3rem;
+}
+
+.LoadMoreContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.LoadMore {
+  margin-bottom: 2.7rem;
+  border: 1px solid $orange-03;
+  color: $orange-01;
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.35rem;
+  line-height: 1.4rem;
+  padding: 1.5rem 3rem;
+  background: none;
+}

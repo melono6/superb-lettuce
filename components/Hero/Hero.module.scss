@@ -1,0 +1,232 @@
+@import "../../styles/variables.scss";
+
+.Wrapper {
+  @extend .ComponentLayout;
+  margin-bottom: 4.8rem;
+
+  @include media(">tablet") {
+    margin-top: 6.4rem;
+    margin-bottom: 8rem;
+  }
+
+  &__Article {
+    margin-top: 1.6rem;
+    margin-bottom: 2.4rem;
+
+    @include media(">tablet") {
+      margin-top: 2.4rem;
+      margin-bottom: 5.6rem;
+    }
+  }
+}
+
+.Hero {
+  @include media(">tablet") {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  &__BackgroundColourPadding {
+    padding-top: $mobile-padding;
+    padding-bottom: $mobile-padding;
+  }
+}
+
+.ImageWrapper {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin-bottom: 3.4rem;
+
+  @include media(">tablet") {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .Hero__FullWidth & {
+    margin-bottom: 3.2rem;
+  }
+
+  .Hero__BackgroundColourPadding & {
+    margin-bottom: 0;
+  }
+}
+
+.CaptionWrapper {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2.4rem 1.2rem;
+}
+
+.Caption,
+.Copyright {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.3rem;
+  color: $white;
+  line-height: 1.4rem;
+}
+
+.Caption {
+  padding-right: 1rem;
+  font-family: $font-secondary;
+}
+
+.Copyright {
+  padding-left: 1rem;
+  text-align: right;
+  font-family: $font-secondary;
+}
+
+.CopyWrapper {
+  text-align: center;
+
+  .Hero__BackgroundColourPadding & {
+    padding: 3rem 3rem 2rem;
+  }
+
+  @include media(">tablet") {
+    padding-left: 5rem;
+    padding-right: 5rem;
+
+    .Hero__BackgroundColourPadding & {
+      padding-top: 3rem;
+      padding-bottom: 2rem;
+    }
+  }
+}
+
+.LabelWrapper {
+  &__Mobile {
+    text-align: center;
+    margin-top: 2rem;
+
+    @include media(">tablet") {
+      display: none;
+    }
+  }
+}
+
+.Label {
+  color: $orange-01;
+  letter-spacing: 0.34rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  font-weight: 900;
+  line-height: 1.4rem;
+}
+
+.RuleWrapper {
+  @include media(">tablet") {
+    margin: auto;
+    max-width: 39rem;
+  }
+}
+
+.Title {
+  letter-spacing: 0.06rem;
+  font-size: 3.6rem;
+  margin-bottom: 1.8rem;
+  font-family: $font-primary;
+  font-weight: 800;
+  color: $black;
+  text-transform: capitalize;
+
+  @include media(">tablet") {
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+    margin-bottom: 1.3rem;
+  }
+
+  .Hero__FullWidth & {
+    font-size: 4.8rem;
+    letter-spacing: 0.08rem;
+    line-height: 5.6rem;
+
+    @include media(">tablet") {
+      font-size: 6rem;
+      letter-spacing: 0.1rem;
+      line-height: 7.2rem;
+    }
+  }
+
+  .Hero__Primary & {
+    font-size: 4.8rem;
+    line-height: 5.6rem;
+    margin-bottom: 1.5rem;
+
+    @include media(">tablet") {
+      font-size: 6rem;
+      line-height: 7.2rem;
+      letter-spacing: 0.071rem;
+      margin-bottom: 7.3rem;
+    }
+  }
+}
+
+.TitleLink {
+  @include multi-line-hover;
+
+  &:hover {
+    @include multi-line-hovered-state;
+  }
+}
+
+.TeaserCopy {
+  font-size: 2.6rem;
+  letter-spacing: 0.16rem;
+  margin-bottom: 3rem;
+  font-family: $font-primary;
+  font-weight: 400;
+  line-height: 3.2rem;
+  color: $black;
+
+  .Hero__FullWidth & {
+    font-size: 3rem;
+    letter-spacing: 0.167rem;
+    line-height: 4rem;
+
+    @include media(">tablet") {
+      font-size: 3.6rem;
+      letter-spacing: 0.2rem;
+      line-height: 4.8rem;
+    }
+  }
+
+  .Hero__Primary & {
+    margin-bottom: 0;
+
+    @include media(">tablet") {
+      margin-bottom: 8.6rem;
+    }
+  }
+}
+
+.TeaserCopyLink {
+  font-weight: 400;
+}
+
+.Author {
+  margin-bottom: 1.2rem;
+  line-height: 1.2rem;
+
+  @include media(">tablet") {
+    margin-bottom: 0.7rem;
+  }
+}
+
+.ArticleDate {
+  color: $grey-01;
+  letter-spacing: 0.34rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  font-family: $font-secondary;
+  font-weight: 400;
+  line-height: 1.2rem;
+}

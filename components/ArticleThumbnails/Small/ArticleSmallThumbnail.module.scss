@@ -1,0 +1,155 @@
+@import "../../../styles/variables.scss";
+
+.ArticleSmallThumbnail {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2.3rem;
+  padding-bottom: 2.3rem;
+
+  @include media(">tablet") {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  &__Primary {
+    &:after {
+      content: "";
+      width: 6.4rem;
+      height: 0.1rem;
+      background-color: $black;
+      display: block;
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+
+      @include media(">tablet") {
+        display: none;
+      }
+    }
+
+    &:last-child {
+      &:after {
+        display: none;
+      }
+
+      @include media(">tablet") {
+        .CopyWrapper {
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__Nested {
+    margin-bottom: 2.5rem;
+    padding-bottom: 2.5rem;
+
+    &::before,
+    &::after {
+      content: "";
+      display: block;
+      left: 50%;
+      position: absolute;
+      background-color: $black;
+    }
+
+    &:before {
+      width: 0.6rem;
+      height: 0.6rem;
+      transform: rotate(45deg);
+      transform-origin: center 0;
+      bottom: -0.3rem;
+    }
+
+    &:after {
+      width: 100%;
+      height: 0.1rem;
+      bottom: 0;
+      transform: translateX(-50%);
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+
+      &::before,
+      &:after {
+        display: none;
+      }
+    }
+  }
+}
+
+.CopyWrapper {
+  padding-left: 2.3rem;
+
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  .ArticleSmallThumbnail__Primary & {
+    @include media(">tablet") {
+      position: relative;
+      max-width: 28.9rem;
+      padding-right: 2rem;
+
+      &:after {
+        content: "";
+        background-color: $black;
+        display: block;
+        position: absolute;
+        height: 6.4rem;
+        width: 0.1rem;
+        right: 1rem;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+      }
+    }
+
+    @include media(">desktop-wide") {
+      padding-right: 3.6rem;
+
+      &:after {
+        right: 0;
+      }
+    }
+  }
+}
+
+.ImageWrapper {
+  width: 10.4rem;
+  min-width: 10.4rem;
+}
+
+.Title {
+  color: $black;
+  font-family: $font-primary;
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.04rem;
+  line-height: 2.4rem;
+  margin-bottom: 0.4rem;
+  text-transform: capitalize;
+}
+
+.TitleLink {
+  @include multi-line-hover;
+
+  &:hover {
+    @include multi-line-hovered-state;
+  }
+}
+
+.Date {
+  color: $grey-01;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}

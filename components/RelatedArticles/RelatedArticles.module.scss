@@ -1,0 +1,96 @@
+@import "../../styles/variables.scss";
+
+.Wrapper {
+  margin-bottom: 4rem;
+
+  @include media(">tablet") {
+    margin-bottom: 4.8rem;
+  }
+}
+
+.ArticleItem {
+  position: relative;
+  text-align: center;
+  padding-top: 2.4rem;
+  padding-bottom: 2.4rem;
+  justify-content: center;
+  margin-bottom: 0;
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 0.1rem;
+    background-color: $black;
+    width: 9.5rem;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  @include media(">tablet") {
+    text-align: left;
+    padding: 2.2rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    &::after {
+      width: 100%;
+    }
+  }
+
+  .Wrapper__None & {
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+  }
+}
+
+.ImageWrapper {
+  width: 8.4rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.4rem;
+
+  @include media(">tablet") {
+    width: 10.4rem;
+    min-width: 10.4rem;
+    margin-right: 2.4rem;
+    margin-left: 0;
+    margin-bottom: 0;
+  }
+}
+
+.Image {
+  display: block;
+}
+
+.Title {
+  color: $black;
+  font-family: $font-primary;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 2.8rem;
+  @include multi-line-hover;
+
+  &:hover {
+    @include multi-line-hovered-state;
+  }
+
+  @include media(">tablet") {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+}

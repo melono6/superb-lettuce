@@ -1,0 +1,361 @@
+@import "./variables.scss";
+
+// Headings
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-family: $font-primary;
+  font-size: 4.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08rem;
+  line-height: 5.6rem;
+
+  @include media(">tablet") {
+    font-size: 6rem;
+    letter-spacing: 0.1rem;
+    line-height: 7rem;
+  }
+}
+
+h2 {
+  font-family: $font-primary;
+  font-size: 3.6rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  line-height: 4.4rem;
+
+  @include media(">tablet") {
+    font-size: 4.8rem;
+    letter-spacing: 0.08rem;
+    line-height: 5.6rem;
+  }
+}
+
+h3 {
+  font-family: $font-primary;
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 0.06rem;
+  line-height: 4.4rem;
+
+  @include media(">tablet") {
+    font-size: 3rem;
+    line-height: 3.6rem;
+  }
+}
+
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 2.8rem;
+}
+
+h4 {
+  @include media(">tablet") {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    letter-spacing: 0.06rem;
+  }
+}
+
+h5,
+h6 {
+  @include media(">tablet") {
+    font-size: 2rem;
+    line-height: 2.4rem;
+    letter-spacing: 0.04rem;
+  }
+}
+
+// Body copy
+p,
+ol,
+ul,
+dl,
+table {
+  font-size: 1.6rem;
+}
+
+p {
+  font-family: $font-secondary;
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 0.12rem;
+  line-height: 3.2rem;
+  margin-bottom: 1.6rem;
+}
+
+a {
+  color: $black;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+u {
+  text-decoration: none;
+  border-bottom: 0.1rem solid $black;
+}
+
+// Blockquote
+blockquote {
+  font-family: $font-secondary;
+  font-size: 2.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12rem;
+  line-height: 4rem;
+  margin-top: 6.5rem;
+  margin-bottom: 6.5rem;
+
+  p {
+    font-weight: 500;
+    font-size: 2.6rem;
+    line-height: 4rem;
+    margin-bottom: 0;
+  }
+
+  cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 1rem;
+    text-align: right;
+  }
+}
+
+// Lists
+ul,
+ol,
+dl {
+  text-align: left;
+  padding-inline-start: 2rem;
+  margin-bottom: 1.6rem;
+
+  ul,
+  ol,
+  dl {
+    margin-bottom: 0;
+  }
+}
+
+ul {
+  list-style: none;
+  padding-inline-start: 0;
+
+  li {
+    margin: 0;
+    margin-bottom: 1rem;
+    padding-left: 3rem;
+    position: relative;
+
+    &:after {
+      content: "";
+      height: 0.6em;
+      width: 0.6em;
+      background: $orange-01;
+      display: block;
+      position: absolute;
+      transform: rotate(45deg);
+      top: 1rem;
+      left: 0;
+    }
+
+    ul {
+      margin-top: 0.6rem;
+      margin-bottom: 0;
+    }
+  }
+}
+
+ol {
+  list-style-type: decimal;
+
+  li {
+    padding-left: 1rem;
+  }
+}
+
+li {
+  margin-bottom: 0.6rem;
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+abbr {
+  text-decoration: none;
+  border-bottom: 0.1rem dashed $grey;
+}
+
+// Code
+
+dt {
+  font-weight: bold;
+}
+
+code {
+  font-family: courier, monospace;
+  padding: 0.25em;
+  background: $grey;
+}
+
+pre {
+  text-align: left;
+  font-size: 100%;
+}
+
+hr {
+  height: 0;
+  color: $grey;
+  border: 1px solid $grey;
+  margin: 2em 0 1em;
+}
+
+kbd {
+  margin: 0 0.1em;
+  padding: 0.1rem 0.6rem;
+  border-radius: 0.3rem;
+  border: 1px solid $grey;
+  color: $black;
+  font-family: courier, monospace;
+  font-size: 1.2rem;
+  display: inline-block;
+  border-radius: 0.3rem;
+}
+
+// Brand fonts
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3d11c5");
+
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-Book/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-Book/font.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-BookOblique/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-BookOblique/font.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-Light/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-Light/font.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-LightOblique/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-LightOblique/font.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-Medium/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-Medium/font.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-MediumOblique/font.woff2")
+      format("woff2"),
+    url("../public/font/FuturaLTPro-MediumOblique/font.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-Bold/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-Bold/font.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-BoldOblique/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-BoldOblique/font.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-Heavy/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-Heavy/font.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "FuturaLTPro";
+  src: url("../public/font/FuturaLTPro-HeavyOblique/font.woff2") format("woff2"),
+    url("../public/font/FuturaLTPro-HeavyOblique/font.woff") format("woff");
+  font-weight: 900;
+  font-display: swap;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "DidotLTStd";
+  src: url("../public/font/DidotLTStd-Roman/font.woff2") format("woff2"),
+    url("../public/font/DidotLTStd-Roman/font.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DidotLTStd";
+  src: url("../public/font/DidotLTStd-Italic/font.woff2") format("woff2"),
+    url("../public/font/DidotLTStd-Italic/font.woff") format("woff");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "DidotLTStd";
+  src: url("../public/font/DidotLTStd-Bold/font.woff2") format("woff2"),
+    url("../public/font/DidotLTStd-Bold/font.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "DidotLTStd";
+  src: url("../public/font/DidotLTStd-BoldItalic/font.woff2") format("woff2"),
+    url("../public/font/DidotLTStd-BoldItalic/font.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+  font-style: italic;
+}
+@font-face {
+  font-family: "DidotLTStd";
+  src: url("../public/font/DidotLTStd-Headline/font.woff2") format("woff2"),
+    url("../public/font/DidotLTStd-Headline/font.woff") format("woff");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}

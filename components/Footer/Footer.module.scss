@@ -1,0 +1,155 @@
+@import "../../styles/variables.scss";
+
+.Wrapper {
+  border-top: 0.2rem solid $black;
+  @include media(">tablet") {
+    border-top: none;
+  }
+}
+
+.Footer {
+  display: flex;
+  flex-direction: column;
+  padding: 4rem 2rem 3rem;
+  font-size: 1.2rem;
+  font-family: $font-secondary;
+
+  > * {
+    text-align: center;
+  }
+
+  @include media(">tablet") {
+    border-top: 0.2rem solid $black;
+    max-width: $desktop-component-width;
+    margin: 0 auto;
+    flex-direction: row;
+    padding: 3.6rem $mobile-padding;
+
+    > * {
+      text-align: left;
+    }
+  }
+}
+
+.Logo {
+  width: 8rem;
+  display: inline-block;
+  margin-bottom: 3rem;
+
+  @include media(">tablet") {
+    margin-bottom: 0;
+  }
+}
+
+.Copyright {
+  margin-bottom: 2.2rem;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+
+  @include media(">tablet") {
+    margin-bottom: 0;
+    margin-right: 3.2rem;
+  }
+}
+
+.SocialNav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 3rem;
+
+  img {
+    width: 3rem;
+    height: auto;
+  }
+
+  a {
+    margin-right: 4rem;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  @include media(">tablet") {
+    margin-bottom: 0;
+  }
+}
+
+.DiamondBreak {
+  display: flex;
+  justify-content: center;
+
+  > div {
+    height: 0.554rem;
+    width: 0.554rem;
+    transform: rotate(-45deg);
+    background-color: #000000;
+    margin: 0 0.4rem;
+  }
+}
+
+.HideDesktop {
+  @include media(">tablet") {
+    display: none;
+  }
+}
+
+.Nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+
+  @include media(">tablet") {
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+.NavLink {
+  margin-bottom: 3rem;
+  font-weight: 900;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: black;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include media(">tablet") {
+    margin-right: 3rem;
+    margin-bottom: 0;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+.LogoContainerDesktop {
+  display: none;
+
+  @include media(">tablet") {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.DesktopLeft {
+  @include media(">tablet") {
+    display: flex;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+.LogoContainerMobile {
+  @include media(">tablet") {
+    display: none;
+  }
+}

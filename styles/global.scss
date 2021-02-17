@@ -1,0 +1,43 @@
+@import "./reset.scss";
+@import "./typography.scss";
+
+html {
+  background-color: $brand-primary;
+  max-width: 100%;
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    system-ui, sans-serif !important;
+}
+
+html,
+body,
+#primary-menu {
+  transition: background-color 2s;
+}
+
+#primary-menu {
+  transition: opacity 0.53, background-color 2s;
+}
+
+img {
+  object-fit: cover;
+}
+
+cite {
+  display: block;
+  font-style: normal;
+  color: $orange-01;
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+  font-family: $font-secondary;
+  font-weight: 500;
+  margin: 0;
+}

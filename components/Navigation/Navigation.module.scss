@@ -1,0 +1,319 @@
+@import "../../styles/variables.scss";
+
+.Header {
+  border-bottom: 0.1rem solid $black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  height: 5rem;
+  padding-bottom: 0;
+  margin-top: 4rem;
+  margin-bottom: 1.6rem;
+
+  @include media(">tablet") {
+    height: 6.4rem;
+    padding-bottom: 1.4rem;
+    margin-top: 6.4rem;
+    margin-bottom: 2.4rem;
+  }
+}
+
+.NavWrapper {
+  width: $desktop-component-width;
+}
+
+.Nav {
+  @include media("<tablet") {
+    margin-left: -0.7rem;
+    width: 4.4rem;
+    height: 4.4rem;
+    overflow: hidden;
+  }
+}
+
+.MobileNavWrapper {
+  display: none;
+  @include media("<tablet") {
+    display: block;
+  }
+}
+
+.MobileNavButton {
+  position: relative;
+  @extend .ButtonReset;
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @include media(">tablet") {
+    display: none;
+  }
+}
+
+%NavIcon {
+  width: 3rem;
+  height: 0.3rem;
+  background-color: $black;
+  display: block;
+}
+
+.MobileNavIcon {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    @extend %NavIcon;
+    transform: rotate(0);
+    transition: transform;
+    transition-duration: 0.2s;
+    transform: rotate(0);
+    transform-origin: center center;
+  }
+
+  .MobileNavButton[aria-expanded="true"] & {
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    .NavTopBar,
+    .NavBottomBar {
+      transform: translate(-50%, -50%) scaleX(0);
+      background-color: change-color($color: $black, $alpha: 0);
+    }
+  }
+}
+
+.NavTopBar,
+.NavBottomBar {
+  @extend %NavIcon;
+
+  @include media("<tablet") {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: transform 0.2s, background-color 0.2s;
+    transform-origin: 0 0;
+    transform: translate(-50%, -50%) scaleX(1);
+  }
+  @include media(">tablet") {
+    display: none;
+  }
+}
+
+.NavTopBar {
+  margin-top: -0.8rem;
+}
+
+.NavBottomBar {
+  margin-top: 0.8rem;
+}
+
+.NavLinkWrapper {
+  @include media("<tablet") {
+    visibility: hidden;
+    pointer-events: none;
+    background-color: $brand-primary;
+    width: 100%;
+    height: 0;
+    position: fixed;
+    top: 9rem;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.2s;
+
+    .MobileNavButton[aria-expanded="true"] ~ & {
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      pointer-events: all;
+    }
+  }
+}
+
+.NavLinkWrapper-in {
+  @include media(">tablet") {
+    opacity: 0;
+  }
+}
+
+.NavItem {
+  color: $black;
+  text-transform: uppercase;
+  font-weight: 900;
+  display: block;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  letter-spacing: 0.34rem;
+  line-height: 1.4rem;
+  padding-top: 3.7rem;
+  padding-bottom: 3.7rem;
+  border-bottom: 0.1rem solid $black;
+  width: 100%;
+
+  @include media(">tablet") {
+    letter-spacing: 0.35rem;
+    border-bottom: none;
+    width: fit-content;
+    padding-bottom: 2rem;
+    padding-top: 2rem;
+  }
+
+  &__LoggedIn {
+    display: none;
+  }
+
+  &__Login {
+    display: block;
+    color: $orange-01;
+
+    @include media(">tablet") {
+      display: none;
+    }
+  }
+}
+
+.ActiveNavLink {
+  @include media(">tablet") {
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -1.4rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: $black;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+    }
+  }
+}
+
+.LogoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  svg {
+    max-width: 100%;
+    min-width: 20rem;
+  }
+}
+
+.LogoWrapper-in {
+  svg {
+    @include media(">tablet") {
+      min-width: 30rem;
+    }
+  }
+}
+
+.ButtonWrapper {
+  display: flex;
+  align-self: center;
+  justify-content: flex-end;
+}
+
+.SearchButton {
+  @extend .ButtonReset;
+  padding: 0;
+  margin-left: auto;
+
+  @include media(">tablet") {
+    margin-left: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 3.6rem;
+    height: 3.6rem;
+    border: 0.2rem solid change-color($black, $alpha: 0);
+    transition: border 0.2s, opacity 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+
+    &:hover {
+      border: 0.2rem solid $black;
+    }
+
+    &:active {
+      border: 0.2rem solid change-color($black, $alpha: 0);
+      opacity: 0.5;
+    }
+  }
+}
+
+.LoginButton {
+  @extend .ButtonReset;
+  display: none;
+  height: 4rem;
+  min-width: 12.4rem;
+  padding: 2rem;
+  align-items: center;
+  justify-content: center;
+  color: $orange-01;
+  border: 0.1rem solid $orange-03;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 900;
+  letter-spacing: 0.35rem;
+  line-height: 1.4rem;
+  text-transform: uppercase;
+  transition: border-color 0.2s, color 0.2s;
+
+  &:hover {
+    border: 0.2rem solid $black;
+    color: $black;
+  }
+
+  @include media(">tablet") {
+    margin-left: 2rem;
+    display: inline-flex;
+  }
+
+  @include media(">desktop") {
+    margin-left: 4rem;
+  }
+}
+
+.LoginText {
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -0.4rem;
+    left: 0;
+    width: 100%;
+    background-color: $black;
+    transform: scaleX(0);
+    transform-origin: 0 center;
+    height: 0.1rem;
+    transition: transform 0.2s;
+
+    .LoginButton:hover & {
+      transform: scaleX(1);
+    }
+  }
+}

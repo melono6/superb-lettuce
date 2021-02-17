@@ -1,0 +1,64 @@
+@import "../../styles/variables.scss";
+
+.ImageCaption {
+  padding: $mobile-padding;
+
+  @include media(">tablet") {
+    max-width: $desktop-component-width;
+    padding: 3.5rem;
+    margin: 0 auto;
+  }
+}
+
+.Image {
+  img {
+    width: 100%;
+  }
+}
+
+.TextContainer {
+  @include media(">tablet") {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.Caption,
+.Copyright {
+  font-family: $font-secondary;
+  font-weight: 500;
+  letter-spacing: 0.3rem;
+  line-height: 1.4rem;
+  padding-left: 1.8rem;
+  margin: 0;
+}
+
+.Caption {
+  font-size: 1.8rem;
+  position: relative;
+  margin: 1rem 0;
+
+  a {
+    color: $black;
+    font-weight: 500;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 0.554rem;
+    width: 0.554rem;
+    transform: rotate(-45deg);
+    background-color: #000000;
+    margin: 0 0.4rem;
+    left: 0;
+    top: 0.4rem;
+  }
+}
+
+.Copyright {
+  font-size: 1.2rem;
+  @include media(">tablet") {
+    margin: 1rem 0;
+  }
+}

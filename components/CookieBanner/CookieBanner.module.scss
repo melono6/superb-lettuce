@@ -1,0 +1,72 @@
+@import "../../styles/variables.scss";
+
+.CookieBanner {
+  background-color: $white-01;
+  padding: 2rem 2.5rem 3rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%);
+  opacity: 0;
+  transition: opacity .3s, transform .3s;
+  z-index: 9;
+
+  @include media(">tablet") {
+    padding: 0;
+  }
+}
+
+.CookieBanner--show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.Inner {
+  margin: 0 auto;
+  max-width: $desktop-component-width;
+  padding: 2rem 3.5rem;
+
+  @include media(">tablet") {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.Title {
+  font-family: $font-primary;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: .04rem;
+  line-height: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.Information {
+  font-family: $font-secondary;
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: .14rem;
+  line-height: 1.6rem;
+  margin-bottom: 2.5rem;
+
+  @include media(">tablet") {
+    margin-bottom: 0;
+  }
+}
+
+.Button {
+  padding: 1.3rem 3rem;
+  background-color: transparent;
+  border: .1rem solid $orange-03;
+  color: $orange-01;
+  font-family: $font-secondary;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 3.5px;
+  line-height: 14px;
+  text-transform: uppercase;
+
+  @include media(">tablet") {
+    margin-left: auto;
+  }
+}

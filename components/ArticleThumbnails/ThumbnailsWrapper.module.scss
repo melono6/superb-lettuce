@@ -1,0 +1,36 @@
+@import "../../styles/variables.scss";
+
+.ThumbnailsWrapper {
+  padding-left: $mobile-padding;
+  padding-right: $mobile-padding;
+
+  @include media(">tablet") {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: $desktop-component-width;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5.6rem;
+    margin-bottom: 7.5rem;
+  }
+
+  &__AlignStart {
+    padding-left: 0;
+    padding-right: 0;
+
+    @include media(">tablet") {
+      align-items: flex-start;
+    }
+  }
+
+  &__Large {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 4.7rem;
+
+    @include media(">tablet") {
+      margin-bottom: 7.5rem;
+    }
+  }
+}

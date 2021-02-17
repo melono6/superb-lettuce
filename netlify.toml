@@ -1,0 +1,52 @@
+[build]
+  functions = "api/"
+
+[[redirects]]
+  from = "https://cs-storybook.netlify.app/"
+  to = "/"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/preview/*"
+  to = "/preview/?slug=:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/"
+  to = "/index-loggedin"
+  status = 200
+	force = true
+  conditions = {Role = ["member"]}
+
+[[redirects]]
+  from = "/"
+  to = "/index-loggedout"
+  status = 200
+	force = true
+
+[[redirects]]
+  from = "/_next/data/:hash/member/*"
+  to = "/_next/data/:hash/member/:splat"
+  status = 200
+	force = true
+  conditions = {Role = ["member"]}
+
+[[redirects]]
+  from = "/_next/data/:hash/member/*"
+  to = "/_next/data/:hash/article-preview/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "/member/*"
+  status = 200
+	force = true
+  conditions = {Role = ["member"]}
+
+[[redirects]]
+  from = "/member/*"
+  to = "/article-preview/:splat"
+  status = 200
+	force = true

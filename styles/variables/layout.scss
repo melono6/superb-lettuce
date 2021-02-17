@@ -1,0 +1,45 @@
+@import "./media-queries.scss";
+
+$desktop-component-width: 129rem;
+$mobile-padding: 2.5rem;
+
+.ComponentLayout {
+  @include media(">tablet") {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include media(">desktop-wide") {
+    width: $desktop-component-width;
+  }
+}
+
+.ButtonReset {
+  appearance: none;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+@mixin multi-line-hovered-state {
+  background-size: 100% 0.3rem;
+}
+
+@mixin multi-line-hover {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 0.3rem;
+  display: inline;
+  text-decoration: none;
+  transition: background-size 0.3s;
+
+  &:hover,
+  &:focus {
+    @include multi-line-hovered-state;
+  }
+}

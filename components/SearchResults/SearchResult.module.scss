@@ -1,0 +1,97 @@
+@import "../../styles/variables.scss";
+
+.SearchResult {
+  display: flex;
+  margin-top: 2.3rem;
+  padding-bottom: 2.3rem;
+  position: relative;
+
+  &:last-child {
+    .Line {
+      display: none;
+    }
+  }
+
+  @include media(">tablet") {
+    padding-left: 10rem;
+    padding-right: 10rem;
+
+    &:last-child {
+      .Line {
+        display: block;
+      }
+    }
+  }
+}
+
+.Image {
+  width: 10.4rem;
+  margin-right: 2rem;
+  flex-shrink: 0;
+
+  img {
+    width: 100%;
+  }
+}
+
+.Title {
+  font-family: $font-primary;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 0;
+  line-height: 2.8rem;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+
+  @include media(">tablet") {
+    font-size: 2.4rem;
+    letter-spacing: 0.06rem;
+    line-height: 3.2rem;
+  }
+}
+
+.TitleLink {
+  @include multi-line-hover;
+
+  &:hover {
+    @include multi-line-hovered-state;
+  }
+}
+
+.Teaser {
+  display: none;
+
+  @include media(">tablet") {
+    display: block;
+    font-family: $font-secondary;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1.4px;
+    line-height: 16px;
+  }
+}
+
+.Date {
+  color: $grey-01;
+  font-family: $font-secondary;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  line-height: 1.2rem;
+  text-transform: uppercase;
+}
+
+.Line {
+  height: 1px;
+  width: 65px;
+  transform: scaleY(-1);
+  background-color: $black;
+  position: absolute;
+  bottom: 0;
+
+  @include media(">tablet") {
+    left: 0;
+    width: 100%;
+    background-color: $grey-02;
+  }
+}

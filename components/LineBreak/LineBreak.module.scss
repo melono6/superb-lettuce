@@ -1,0 +1,70 @@
+@import "../../styles/variables.scss";
+
+$rule-height: 1.4rem;
+
+.Wrapper {
+  width: 100%;
+  margin: 4.5rem auto 5rem;
+}
+
+.ThemeWrapper {
+  &__Diamond {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: $rule-height;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      display: inline-block;
+      background-color: $black;
+      height: 0.1rem;
+      width: calc(50% - #{$rule-height});
+    }
+
+    &.ThemeWrapper__Orange {
+      &::before,
+      &::after {
+        background-color: $orange-01;
+      }
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+  }
+}
+
+.LineBreak {
+  width: 100%;
+  height: 0.1rem;
+  background-color: $black;
+  display: block;
+  color: $black;
+  border: none;
+  margin: 0;
+
+  .ThemeWrapper__Orange & {
+    background-color: $orange-01;
+  }
+
+  .ThemeWrapper__Diamond & {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.9rem;
+    height: 0.9rem;
+    transform: rotate(45deg) translate(-50%, -50%);
+    transform-origin: 0 0;
+    border: none;
+    margin: 0;
+  }
+}

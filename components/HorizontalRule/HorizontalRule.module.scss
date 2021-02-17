@@ -1,0 +1,70 @@
+@import "../../styles/variables.scss";
+
+$rule-height: 1.4rem;
+
+.Wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: $rule-height;
+  margin: 2.2rem auto 3rem;
+
+  &::before,
+  &::after {
+    content: "";
+    display: inline-block;
+    background-color: $black;
+    height: 0.1rem;
+    width: calc(50% - #{$rule-height});
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+  }
+
+  &__Primary {
+    &::before,
+    &::after {
+      position: absolute;
+    }
+  }
+
+  &__Secondary {
+    width: 9.6rem;
+    justify-content: space-evenly;
+    margin: 3rem auto 3.7rem;
+
+    &::before,
+    &::after {
+      width: 0.8rem;
+      height: 0.8rem;
+      background-color: $black;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+.HorizontalRule {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: .9rem;
+  height: .9rem;
+  background-color: $black;
+  transform: rotate(45deg) translate(-50%, -50%);
+  transform-origin: 0 0;
+  border: none;
+  margin: 0;
+
+  &__Secondary {
+    background-color: $black;
+    width: 0.8rem;
+    height: 0.8rem;
+  }
+}

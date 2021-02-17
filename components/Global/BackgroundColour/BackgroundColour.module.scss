@@ -1,0 +1,31 @@
+@import "../../../styles/variables.scss";
+
+.Wrapper {
+  &__Peche {
+    background-color: $peche;
+  }
+
+  &__Lemon {
+    background-color: $lemon;
+  }
+
+  &__Lime {
+    background-color: $lime;
+  }
+
+  &__Pearl {
+    background-color: $pearl;
+  }
+
+  &__Salmon {
+    background-color: $salmon;
+  }
+
+  &__Mushroom {
+    background-color: $mushroom;
+  }
+
+  &__Stone {
+    background-color: $stone;
+  }
+}

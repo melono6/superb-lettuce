@@ -1,0 +1,17 @@
+@import "../../styles/variables.scss";
+
+.Wrapper {
+  margin-bottom: 5.6rem;
+
+  @include media(">tablet") {
+    margin-bottom: 7.2rem;
+  }
+
+  iframe {
+    max-width: 100%;
+  }
+}
+
+.IframeContainer {
+  text-align: center;
+}

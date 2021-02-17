@@ -1,0 +1,28 @@
+@import "../../styles/variables.scss";
+
+.IntroWrapper {
+  display: flex;
+  justify-content: space-evenly;
+  width: 7rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3.2rem;
+}
+
+.DotWrapper {
+  height: 0.8rem;
+  width: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.IntroDot {
+  margin: auto;
+  display: inline-block;
+  width: 0.8rem;
+  height: 0.8rem;
+  background-color: $black;
+  transform: rotate(45deg);
+  transform-origin: center center;
+}
